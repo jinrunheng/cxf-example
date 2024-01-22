@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.BookMapper">
+    <resultMap id="bookResultMap" type="com.test.entity.Book">
+        <result property="bookName" column="book_name"/>
+    </resultMap>
+
+    <select id="selectBookById" resultMap="bookResultMap">
+        select * from book as b where b.id = #{id}
+    </select>
+
+</mapper>
